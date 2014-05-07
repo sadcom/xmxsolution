@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Order Details</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="css/TableCSSCode.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //alert(prepareGrid());
+            
+            $("#grid").html(prepareGrid());
+        });
+        function prepareGrid()
+        {
+            
+            var html="<table><tr>";
+            html+="<td>Order No.</td>";
+            html+="<td>Date</td>";
+            html+="<td>Party Name</td>";
+            html += "<td>Status</td></tr>";
+            //alert(html);
+            var records = 10;
+            var curdt = new Date();
+            for(i=1;i<=records;i++)
+            {
+                html+="<tr><td>" + i + "</td>";
+                html+="<td>" + curdt.getDate() + "</td>";
+                html+="<td>" + "ABC" + "</td>";
+                html+="<td>" + "Pending" + "</td></tr>";
+            }
+            html+="</table>"
+            return html;
+        }
+    </script>
+</head>
+<body>
+    <div id="grid" class="CSSTableGenerator">
+
+    </div>
+
+</body>
+</html>

@@ -3,12 +3,20 @@
 <head>
     <title>Order Details</title>
     <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/cordova.js"></script>
     <link href="css/TableCSSCode.css" rel="stylesheet" />
     <script type="text/javascript">
-        document.addEventListener("backbutton", onBackKeyDown, false);
-        function onBackKeyDown(e) {
-            e.preventDefault();
+        function onLoad() {
+            document.addEventListener("deviceready", onDeviceReady, false);
         }
+        function onDeviceReady() {
+            // Register the event listener
+            document.addEventListener("backbutton", onBackKeyDown, false);
+        }
+        function onBackKeyDown() {
+            alert("Logout");
+        }
+
         $(document).ready(function () {
             $("#grid").html(prepareGrid());
         });
@@ -30,7 +38,7 @@
         }
     </script>
 </head>
-<body>
+<body onload="onLoad()">
     
     <div id="grid" class="CSSTableGenerator">
         

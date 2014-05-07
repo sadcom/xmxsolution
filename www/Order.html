@@ -5,6 +5,10 @@
     <script src="js/jquery-1.11.1.js"></script>
     <link href="css/TableCSSCode.css" rel="stylesheet" />
     <script type="text/javascript">
+        document.addEventListener("backbutton", onBackKeyDown, false);
+        function onBackKeyDown(e) {
+            e.preventDefault();
+        }
         $(document).ready(function () {
             $("#grid").html(prepareGrid());
         });
@@ -17,7 +21,7 @@
             html += "<td>Status</td></tr>";
             for (i = 1; i <= records; i = i + 1) {
                 html += "<tr><td>" + i + "</td>";
-                html += "<td>" + curdt.getDate() + "</td>";
+                html += "<td>" + curdt.toLocaleFormat('%d-%b-%Y') + "</td>";
                 html += "<td>" + "ABC" + "</td>";
                 html += "<td>" + "Pending" + "</td></tr>";
             }

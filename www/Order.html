@@ -10,25 +10,20 @@
             
             $("#grid").html(prepareGrid());
         });
-        function prepareGrid()
-        {
-            
-            var html="<table><tr>";
-            html+="<td>Order No.</td>";
-            html+="<td>Date</td>";
-            html+="<td>Party Name</td>";
+        function prepareGrid() {
+            "use strict";
+            var html = "<table><tr>", records = 10, curdt = new Date(), i = 0;
+            html += "<td>Order No.</td>";
+            html += "<td>Date</td>";
+            html += "<td>Party Name</td>";
             html += "<td>Status</td></tr>";
-            //alert(html);
-            var records = 10;
-            var curdt = new Date();
-            for(i=1;i<=records;i++)
-            {
-                html+="<tr><td>" + i + "</td>";
-                html+="<td>" + curdt.getDate() + "</td>";
-                html+="<td>" + "ABC" + "</td>";
-                html+="<td>" + "Pending" + "</td></tr>";
+            for (i = 1; i <= records; i = i + 1) {
+                html += "<tr><td>" + i + "</td>";
+                html += "<td>" + curdt.getDate() + "</td>";
+                html += "<td>" + "ABC" + "</td>";
+                html += "<td>" + "Pending" + "</td></tr>";
             }
-            html+="</table>"
+            html += "</table>";
             return html;
         }
     </script>
